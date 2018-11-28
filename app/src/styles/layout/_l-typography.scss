@@ -1,0 +1,34 @@
+/*=============================================
+=                  Typograpy                  =
+=============================================*/
+
+// .h1 - .h6
+@for $i from 1 through 6 {
+  .h#{$i} {
+    font-weight: bold;
+  }
+}
+
+.h1 {
+  font-size: 3.2rem;
+}
+
+.h2 {
+  font-size: 2.4rem;
+}
+
+.h3 {
+  font-size: 2rem;
+}
+
+.h4 {
+  font-size: 1.9rem;
+}
+
+.h5 {
+  font-size: 1.8rem;
+}
+
+.h6 {
+  font-size: 1.7rem;
+}

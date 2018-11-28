@@ -1,0 +1,46 @@
+# Site data
+title: Jekyll Boilerplate
+url: https://example.com
+baseurl: ""
+images: /dist/images
+styles: /dist/styles/main.css
+scripts: /dist/scripts/app.js
+
+# Build settings
+layouts_dir: src/theme/_layouts
+includes_dir: src/theme/_includes
+collections_dir: public
+data_dir: public/_data
+exclude:
+  - node_modules
+  - src/fonts
+  - src/images
+  - src/scripts
+  - src/styles
+  - vendor
+  - Gemfile
+  - Gemfile.lock
+  - package-lock.json
+  - package.json
+  - webpack.config.js
+include: ["_pages"]
+permalink: /:categories/:title/
+
+# Front Matter defaults
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: l-base
+
+# Markdown settings
+markdown: kramdown
+
+# Plugins
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Jekyll Seo Tag Plugin Settings
+author:
+  name: Acme, Inc.

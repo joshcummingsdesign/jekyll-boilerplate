@@ -1,0 +1,11 @@
+/*=============================================
+=               Mixins - Layout               =
+=============================================*/
+
+/*----------  Breakpoints  ----------*/
+
+@mixin breakpoint($point, $minOrMax: min-width) {
+  @media ($minOrMax: $point) {
+    @content;
+  }
+}

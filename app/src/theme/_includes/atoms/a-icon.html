@@ -1,0 +1,13 @@
+{% comment %}
+
+interface Props {
+  name: string; // Valid icon name (see svg directory)
+  title?: string; // Title for a11y
+}
+
+{% endcomment %}
+
+<svg class="a-icon a-icon--{{ include.name }}">
+  <title>{{ include.title }}</title>
+  <use xlink:href="#icon-{{ include.name }}"></use>
+</svg>

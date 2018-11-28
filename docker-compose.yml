@@ -1,0 +1,23 @@
+version: '3'
+services:
+  node:
+    build:
+      context : .
+      dockerfile: ./docker/node/Dockerfile
+    image: acme/website-node
+    container_name: acme-website-node
+    volumes:
+      - ./app:/usr/src/app
+      - /usr/src/app/node_modules
+  ruby:
+    build:
+      context : .
+      dockerfile: ./docker/ruby/Dockerfile
+    image: acme/website-ruby
+    container_name: acme-website-ruby
+    ports:
+      - 4000:4000
+      - 35729:35729
+    volumes:
+      - ./app:/usr/src/app
+      - /usr/src/app/vendor

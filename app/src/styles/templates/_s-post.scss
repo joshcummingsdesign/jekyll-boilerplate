@@ -1,0 +1,168 @@
+/*=============================================
+=                 Scope Post                  =
+=============================================*/
+
+.s-post {
+
+  h1 {
+    @extend .h1;
+  }
+
+  h2 {
+    @extend .h2;
+  }
+
+  h3 {
+    @extend .h3;
+  }
+
+  h4 {
+    @extend .h4;
+  }
+
+  h5 {
+    @extend .h5;
+  }
+
+  h6 {
+    @extend .h6;
+  }
+
+  b, strong {
+    font-weight: bold;
+  }
+
+  i, em {
+    font-style: italic;
+  }
+
+  sup {
+    vertical-align: super;
+    font-size: smaller;
+  }
+
+  /*----------  Images  ----------*/
+
+  img {
+    max-width: 100%;
+  }
+
+  /*----------  Links  ----------*/
+
+  a {
+    color: $blue;
+    text-decoration: none;
+    transition: color $time $easing;
+
+    &:focus, &:hover {
+      color: darken($blue, 10%);
+      text-decoration: underline;
+    }
+  }
+
+  /*----------  Lists  ----------*/
+
+  ul {
+    list-style-type: disc;
+    padding-left: $padding-xs;
+  }
+
+  ol {
+    list-style-type: decimal;
+    list-style-type: none;
+
+    li {
+      counter-increment: step-counter;
+      position: relative;
+      padding-left: $padding-xs;
+
+      &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: counter(step-counter)'.';
+      }
+
+      // p tag inside ordered list
+      // usually for syntax highlighting
+      p {
+        display: inline;
+      }
+    }
+
+    // Nested ul
+    ul {
+      li {
+        counter-reset: step-counter;
+        padding-left: 0;
+        &:before {
+          display: none;
+        }
+      }
+    }
+
+    // Nested ol
+    ol {
+      list-style-type: lower-roman;
+      li {
+        counter-reset: step-counter;
+        padding-left: 0;
+        margin-left: $padding-xs * 2;
+        &:before {
+          display: none;
+        }
+      }
+    }
+  }
+
+  li {
+    margin: 1rem 0;
+  }
+
+  /*----------  Syntax Highlighting  ----------*/
+
+  // `this syntax`
+  p code {
+    background-color: $off-white;
+  }
+
+  // code blocks - outer wrapper
+  div.highlight {
+
+  }
+
+  /*----------  Footnotes  ----------*/
+
+  .footnotes {
+    overflow-x: scroll;
+    ol {
+      padding: 0;
+      li {
+        padding: 0;
+        &:before {
+          content: normal;
+        }
+        p {
+          background-color: $off-white;
+          display: inline-block;
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  /*----------  Blockquotes  ----------*/
+
+  blockquote {
+    font-style: italic;
+    quotes: "\201C""\201D""\2018""\2019";
+
+    &:before {
+      content: open-quote;
+    }
+
+    &:after {
+      content: close-quote;
+    }
+  }
+}

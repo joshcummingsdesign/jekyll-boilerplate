@@ -1,0 +1,16 @@
+/*=============================================
+=                Layout - Base                =
+=============================================*/
+
+html {
+  font-size: 10px;
+  @include breakpoint($xxl) { font-size: 12px; }
+}
+
+body {
+  font-family: $font;
+  font-weight: $normal;
+  color: $black;
+  font-size: 1.6rem;
+  line-height: 1.5;
+}

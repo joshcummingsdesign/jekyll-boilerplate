@@ -1,0 +1,18 @@
+/*=============================================
+=               Helpers - Form                =
+=============================================*/
+
+// 50% w/ margin-right
+.h-form-50-l {
+  @include breakpoint($sm) {
+    width: calc(50% - 15px) !important;
+    margin-right: $grid-gutter-width !important;
+  }
+}
+
+// 50% w/ no margin
+.h-form-50-r {
+  @include breakpoint($sm) {
+    width: calc(50% - 15px) !important;
+  }
+}

@@ -1,0 +1,13 @@
+/*=============================================
+=              Helpers - Display              =
+=============================================*/
+
+.h-hidden-xl-max { @include breakpoint($xl - 1, max-width) { display: none; } }
+.h-hidden-lg-max { @include breakpoint($lg - 1, max-width) { display: none; } }
+.h-hidden-md-max { @include breakpoint($md - 1, max-width) { display: none; } }
+.h-hidden-sm-max { @include breakpoint($sm - 1, max-width) { display: none; } }
+
+.h-hidden-sm { @include breakpoint($sm) { display: none; } }
+.h-hidden-md { @include breakpoint($md) { display: none; } }
+.h-hidden-lg { @include breakpoint($lg) { display: none; } }
+.h-hidden-xl { @include breakpoint($xl) { display: none; } }

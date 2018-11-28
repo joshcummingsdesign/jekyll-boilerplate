@@ -1,0 +1,10 @@
+### System ###
+.DS_Store
+.idea
+.vscode
+
+### Build ###
+_site
+dist
+node_modules
+/app/vendor
