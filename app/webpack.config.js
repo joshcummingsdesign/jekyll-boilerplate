@@ -20,16 +20,10 @@ module.exports = (env, argv) => {
           enforce: 'pre',
           test: /\.m?js$/,
           exclude: /node_modules/,
-          loader: 'prettier-loader',
-          options: {
-            parser: 'babylon'
-          }
-        },
-        {
-          enforce: "pre",
-          test: /\.m?js$/,
-          exclude: /node_modules/,
-          loader: "eslint-loader",
+          use: [
+            { loader: 'prettier-loader', options: { parser: 'babylon' } },
+            { loader: 'eslint-loader' }
+          ]
         },
         {
           test: /\.m?js$/,
@@ -45,7 +39,7 @@ module.exports = (env, argv) => {
           test: /\.scss$/,
           use: [
             { loader: MiniCssExtractPlugin.loader },
-            { loader: 'css-loader', options: { sourceMap: !isProd } },
+            { loader: 'css-loader', options: { sourceMap: !isProd, url: false } },
             { loader: 'postcss-loader', options: { sourceMap: !isProd } },
             { loader: 'sass-loader', options: { sourceMap: !isProd } }
           ]
