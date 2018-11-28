@@ -1,5 +1,7 @@
 # Site data
-title: Jekyll Boilerplate
+title: Acme, Inc.
+tagline: This is the site tagline.
+description: This is the page description.
 url: https://example.com
 baseurl: ""
 images: /dist/images

@@ -1,7 +1,23 @@
+{% if page.title %}
+  {% capture title %}{{ page.title }} - {{ site.title }}{% endcapture %}
+{% else %}
+  {% capture title %}{{ site.title }} - {{ site.tagline }}{% endcapture %}
+{% endif %}
+
+{% if page.description %}
+  {% capture description %}{{ page.description }}{% endcapture %}
+{% else %}
+  {% capture description %}{{ site.description }}{% endcapture %}
+{% endif %}
+
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <title>Jekyll Test</title>
-  <meta name="description" content="Testing Jekyll in Docker.">
+
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}">
+
+  {% comment %} Style Sheet {% endcomment %}
   <link rel="stylesheet" href="{{ site.styles | prepend: site.baseurl }}?{{ site.time | date: '%s%N' }}">
 </head>
