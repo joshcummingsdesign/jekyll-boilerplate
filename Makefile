@@ -59,10 +59,10 @@ help:
 	@echo "  - Run ESLint"
 	@echo
 	@echo "make npm-install"
-	@echo "  - Runs npm install"
+	@echo "  - Run npm install"
 	@echo
 	@echo "make bundle-install"
-	@echo "  - Runs bundle install"
+	@echo "  - Run bundle install"
 	@echo
 	@echo "make build"
 	@echo "  - Build for production"
