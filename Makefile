@@ -36,6 +36,10 @@ test:
 	$(call in_node, npm run test)
 	$(call in_ruby, bundle exec htmlproofer _site --check-html --url-ignore "/#.*/" --internal-domains "example.com" --http-status-ignore "999")
 
+restart:
+	@docker-compose stop
+	@$(MAKE) -f $(THIS_FILE) start
+
 rebuild:
 	@docker-compose up --build
 
@@ -70,6 +74,9 @@ help:
 	@echo "make test"
 	@echo "  - Run tests"
 	@echo
+	@echo "make restart"
+	@echo "  - Restart the container"
+	@echo
 	@echo "make rebuild"
 	@echo "  - Rebuild then start developement server"
 	@echo
@@ -77,4 +84,4 @@ help:
 	@echo "  - Clean up build files"
 	@echo
 
-.PHONY: start format lint npm-install bundle-install build test rebuild clean
+.PHONY: start format lint npm-install bundle-install build test restart rebuild clean
